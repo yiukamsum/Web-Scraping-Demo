@@ -25,5 +25,5 @@ import pandas as pd
 df = pd.DataFrame(output, columns=['課程類別', '課程編號', '課程名稱', '開辦分校'])
 df = df.explode('開辦分校')
 # explode function require pandas version 0.25.0.
-with open('output.csv', 'w') as file:
-    file.write(df.to_csv())
+with open('output.csv', 'wb') as file:
+    file.write(df.to_csv().encode("utf-8"))
